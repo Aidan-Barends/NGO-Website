@@ -1,0 +1,13 @@
+ .error-message {
+            color: red;
+            display: none;
+        }
+        .volunteer-list {
+            margin-top: 20px;
+			display: center;
+        }
+        .volunteer-item {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+        }

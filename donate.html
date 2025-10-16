@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Make a Donation</title>
+    <link rel="stylesheet" href="css/styling.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <!-- Start of the header -->
+    <header>
+        <div class="inner">
+            <div class="logo">
+                <a href="homepage.html">
+                    <img src="pics/logo-removebg-preview (1).png" alt="Future Foundation's logo">
+                </a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="homepage.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="volunteer.html">Volunteer</a></li>
+                    <li><a href="donate.html" class="live">Donate</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!-- End of the header -->
+
+    <div class="donation-section">
+        <h1 class="sectionTitle">Make a Donation</h1>
+        <div class="donation-description">
+          <p>Your donation helps us continue our essential work in the community. Every contribution goes towards funding our education programs, health initiatives, and sustainability efforts. With your support, we can reach more people and expand our projects to make a greater impact. Donate today and be part of the change.</p>
+        </div>
+    </div>
+    <div class="donation-details">
+        <h3>Your Donation Matters:</h3>
+        
+        <div class="donation-description">
+            <p><strong>Every donation helps Future Foundations continue to serve communities in need.</strong></p>
+            <p>Whether it's:</p>
+            <ul id="donation-list">
+                <li data-message="Your support ensures every student has access to the tools they need to excel.">
+                    <i class='bx bxs-book'></i> <strong>Providing educational materials </strong> for students to succeed.
+                </li>
+                <li data-message="Your contributions help supply vital health resources to communities, improving overall well-being.">
+                    <i class='bx bx-plus-medical'></i> <strong> Supplying health resources </strong> to improve community well-being.
+                </li>
+                <li data-message="With your support, we provide farmers with sustainable tools, enhancing their productivity and livelihoods.">
+                    <i class='bx bxs-leaf'></i> <strong>Equipping farmers </strong> with sustainable tools for a better harvest.
+                </li>
+            </ul>
+        </div>
+        
+        <div class="donation-impact">
+            <p>Your contribution makes an immediate and lasting impact by empowering local communities to thrive.</p>
+            <p id="impact-message"></p>
+        </div>
+    </div>
+    <div class="donation-options">
+        <h3 class="sectionTitle">Ways to Donate:</h3>
+        <div class="donation-methods">
+            <div class="donation-method" onclick="toggleText(this)">
+                <div class="icon-container">
+                    <i class='bx bx-donate-heart'></i>
+                </div>
+                <strong>One-Time Donation</strong>
+                <p class="hidden-text">Make a direct impact with a single contribution to support our ongoing projects.</p>
+            </div>
+            <div class="donation-method" onclick="toggleText(this)">
+                <div class="icon-container">
+                    <i class='bx bx-calendar'></i>
+                </div>
+                <strong>Monthly Giving</strong>
+                <p class="hidden-text">Join our circle of monthly donors and help us sustain our work year-round.</p>
+            </div>
+            <div class="donation-method" onclick="toggleText(this)">
+                <div class="icon-container">
+                    <i class='bx bx-gift'></i>
+                </div>
+                <strong>In-Kind Donations</strong>
+                <p class="hidden-text">Contribute goods or services that can be used in our various community projects.</p>
+            </div>
+        </div>
+    </div>
+    
+  
+    <div class="donation-achievements">
+          <h3 class="sectionTitle">Your Donation Achieves:</h3>
+          
+          <div class="achievement-container">
+              <img src="pics/school-supplies.jpg" alt="School supplies">
+              <p>School supplies for students.</p>
+          </div>
+          
+          <div class="achievement-container">
+              <img src="pics/workshop-materials.jpg" alt="Health workshop materials">
+              <p>Covers health workshop materials for those in need.</p>
+          </div>
+          
+          <div class="achievement-container">
+              <img src="pics/group-support.jpg" alt="Youth mentorship support">
+              <p>Support for mentorship of the local youth.</p>
+          </div>
+    </div>
+      
+    <div class="sponsorship-section">
+        <div class="corporate-sponsorships">
+            <h3 class="sectionTitle">Corporate Sponsorships:</h3>
+            <p>Is your company looking for a meaningful way to give back? Partner with Future Foundations and make a difference through sponsorship or employee volunteer programs.</p>
+        </div>
+    
+        <div class="donation-form">
+            <h3 class="sectionTitle">Make a Donation</h3>
+            <form id="donationForm">
+    <div class="form-group">
+        <label for="donorName">Name:</label>
+        <input type="text" id="donorName" placeholder="Enter your full name">
+        <span id="name-error" class="error-message" style="display: none; color: red;">Please enter your name.</span>
+    </div>
+    <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" placeholder="Enter your email address">
+        <span id="email-error" class="error-message" style="display: none; color: red;">Please enter a valid email address.</span>
+    </div>
+    <div class="form-group">
+        <label for="donationAmount">Donation Amount:</label>
+        <input type="number" id="donationAmount" placeholder="Enter amount">
+        <span id="amount-error" class="error-message" style="display: none; color: red;">Please enter a valid donation amount.</span>
+    </div>
+    <div class="form-group">
+        <label for="donationFrequency">Donation Frequency:</label>
+        <select id="donationFrequency">
+            <option value="" disabled selected>Select frequency</option>
+            <option value="one-time">One-time</option>
+            <option value="monthly">Monthly</option>
+        </select>
+        <span id="frequency-error" class="error-message" style="display: none; color: red;">Please select a donation frequency.</span>
+    </div>
+    <div class="form-group">
+        <label for="message">Message (Optional):</label>
+        <textarea id="message" placeholder="Leave a message or specify donation purpose"></textarea>
+    </div>
+    <div class="form-group submit-button">
+        <button type="submit">Donate</button>
+		<!-- Button to download the donation list -->
+	<button id="downloadListButton">Download Donation List</button>
+	    <button id="displayDonationsButton">Display Donations</button>
+
+    </div>
+	
+</form>
+
+        </div>
+		<!-- Section to display donations -->
+<div id="donationListDisplay">
+    <h3 class="sectionTitle">Donation List:</h3>
+    <ul id="donationList"></ul>
+</div>
+    </div>
+
+    <footer id="footerLabel">
+        <div class="footer-container">
+            <p>Contact us at <a href="mailto:info@futurefoundations.org">info@futurefoundations.org</a></p>
+            <p>Stay connected with Future Foundations through our social media channels and be part of the change!</p>
+            <div class="social-icons">
+                <a href="https://facebook.com" target="_blank"><i class='bx bxl-facebook'></i></a>
+                <a href="https://twitter.com" target="_blank"><i class='bx bxl-twitter'></i></a>
+                <a href="https://instagram.com" target="_blank"><i class='bx bxl-instagram'></i></a>
+                <a href="https://linkedin.com" target="_blank"><i class='bx bxl-linkedin'></i></a>
+            </div>
+        </div>
+    </footer>
+  
+  
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const listItems = document.querySelectorAll("#donation-list li");
+            const impactMessage = document.getElementById("impact-message");
+    
+            listItems.forEach(item => {
+                item.addEventListener("click", function() {
+                    const message = this.getAttribute("data-message");
+                    impactMessage.textContent = message; // Update the message
+                });
+            });
+        });
+        function toggleText(element) {
+            const text = element.querySelector('.hidden-text');
+            text.style.display = text.style.display === 'none' ? 'block' : 'none'; // Toggle display
+        }
+    </script>
+	<script src="javascript/donate.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,909 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* Keyframes for Animations */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px); /* Slide from left */
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0); /* Final position */
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px); /* Slide from right */
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0); /* Final position */
+    }
+}
+
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.7); /* Start smaller */
+    }
+    60% {
+        opacity: 1;
+        transform: scale(1.2); /* Slight overshoot */
+    }
+    100% {
+        transform: scale(1); /* Final size */
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8); /* Start smaller */
+    }
+    to {
+        opacity: 1;
+        transform: scale(1); /* Final size */
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0; 
+        transform: translateY(50px); 
+    }
+    to {
+        opacity: 1; 
+        transform: translateY(0); /* End at its normal position */
+    }
+}
+/* Keyframes for Animations */
+
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: #f4f4f4; 
+    color: #333; 
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+.centered-text {
+    text-align: center; 
+    margin: 0 auto; 
+    max-width: 600px;
+    animation: slideIn 0.5s ease forwards; 
+}
+
+/* Header styles starts */
+header {
+    width: 100%; 
+    height: 100px;
+    border-bottom: solid 1px rgba(16, 16, 16, 0.1);
+    font-family: 'Poppins';
+    background-color: #00796b;
+    backdrop-filter: blur(50px);
+    position: relative;
+    overflow: hidden; 
+    padding: 0 20px; 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
+    animation: fadeIn 0.5s ease forwards; 
+}
+
+header .inner {
+    width: 1250px; 
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+}
+
+header .logo img {
+    height: 105px;
+    transition: transform 0.3s ease;
+    animation: fadeInLeft 0.5s ease forwards;
+}
+
+header .logo img:hover {
+    transform: rotate(360deg);
+    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.3)); 
+}
+
+header nav {
+    display: flex;
+    align-items: center;
+}
+
+header nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+header nav li {
+    margin-right: 30px;
+    opacity: 0; 
+    animation: fadeInUp 0.5s ease forwards; 
+    animation-delay: 0.2s; 
+}
+
+header nav li:nth-child(2) {
+    animation-delay: 0.3s; 
+}
+
+header nav li:nth-child(3) {
+    animation-delay: 0.4s; 
+}
+
+header nav li:nth-child(4) {
+    animation-delay: 0.5s; 
+}
+
+header nav li:nth-child(5) {
+    animation-delay: 0.6s; 
+}
+
+header nav li:last-of-type {
+    margin-right: 0;
+}
+
+header nav a {
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: 0.3s ease;
+    padding: 10px 15px; 
+    border-radius: 5px; 
+}
+
+header nav a:hover {
+    color: #101010;
+    text-shadow: 0 0 25px #fff, 0 0 50px #fff;
+    transform: scale(1.1);
+    background-color: rgba(255, 255, 255, 0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease; 
+}
+nav ul li a.live {
+    color: #101010;
+    text-shadow: 0 0 25px #fff, 0 0 50px #fff;
+    transform: scale(1.1);
+    background-color: rgba(255, 255, 255, 0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    position: relative; /* Necessary for the underline */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header .inner {
+        flex-direction: column; 
+        align-items: flex-start; 
+    }
+    
+    header nav ul {
+        flex-direction: column;
+    }
+
+    header nav li {
+        margin-right: 0; 
+        margin-bottom: 10px; 
+    }
+    
+    header nav li:last-of-type {
+        margin-bottom: 0; 
+    }
+}
+/* Header styling ends */
+
+/* Heading Styles */
+.sectionTitle {
+    width: 300px;
+    border-bottom: 3px solid #00796b; 
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 500;
+    margin: 0 auto 50px;
+    position: relative;
+    padding: 10px 0;
+    text-transform: uppercase;
+    animation: bounceIn 0.5s ease forwards; 
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); 
+}
+
+.sectionTitle:hover {
+    color: #005f57; 
+    cursor: pointer; 
+}
+
+.sectionTitle::after {
+    display: inline-block;
+    content: " ";
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    background-color: #00796b; 
+    left: 50%; 
+    transform: translateX(-50%) rotate(45deg); 
+    top: calc(100% - 9px);
+    border: 3px solid #ffffff; 
+}
+/* Additional styles for fading sections */
+#about-volunteering,
+#why-volunteer,
+#volunteer-opportunities,
+#testimonial,
+#signup-form {
+    animation: fadeIn 1s ease forwards;
+    opacity: 0; 
+}
+
+#about-volunteering {
+    animation-delay: 0.2s; 
+}
+/*why-volunteer section ends*/
+#why-volunteer {
+    background-color: #e0f7fa; 
+    padding: 20px; 
+    border: 2px solid #00796b; 
+    border-radius: 5px; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+    text-align: center; 
+    margin: 20px 0; 
+    animation-delay: 0.4s;
+}
+#why-volunteer img {
+    margin-top: 15px; 
+    border-radius: 5px;
+    transition: transform 0.3s; 
+}
+
+#why-volunteer img:hover {
+    transform: scale(1.05); 
+}
+/*why-volunteer section ends*/
+/*volunteer-opportunities starts*/
+#volunteer-opportunities {
+    background-color: #f9f9f9; 
+    padding: 20px; 
+    border-radius: 5px; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 15px 0; 
+    text-align: left; 
+    animation: slideIn 1s ease forwards;
+    opacity: 0;
+    animation-delay: 0.6s;
+}
+#volunteer-opportunities article {
+    margin-bottom: 15px; 
+    padding: 10px; 
+    background-color: #ffffff; 
+    border-radius: 5px; 
+    transition: background-color 0.3s; 
+}
+#volunteer-opportunities article:hover {
+    background-color: #e0f7fa; 
+}
+#volunteer-opportunities img {
+    display: block;
+    margin: 20px auto; 
+    border-radius: 5px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/*volunteer-opportunities ends*/
+/*testimonial section*/
+#testimonial {
+    background-color: #e0f7fa; 
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+    text-align: center; 
+    margin: 20px 0; 
+    animation-delay: 0.8s;
+}
+.testimonial {
+    display: flex; 
+    align-items: center; 
+    margin: 0 auto; 
+    max-width: 600px;
+    background-color: #ffffff; 
+    border-radius: 8px; 
+    padding: 20px; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+}
+.testimonial-img {
+    width: 80px; 
+    height: 80px; 
+    border-radius: 50%; 
+    margin-right: 20px; 
+    border: 3px solid #00796b; 
+}
+.testimonial-text {
+    text-align: left; 
+}
+.testimonial-text strong {
+    font-size: 1.1rem; 
+}
+.testimonial-text footer {
+    margin-top: 10px; 
+    font-style: italic; 
+    color: #555; 
+}
+/*testimonial section*/
+/*signup-form section*/
+#signup-form {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 30px; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+    max-width: 500px; 
+    margin: 20px auto; 
+    animation-delay: 1s; 
+}
+
+#volunteerForm {
+    display: flex;
+    flex-direction: column; 
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input {
+    padding: 10px; 
+    margin-bottom: 15px; 
+    border: 1px solid #00796b;
+    border-radius: 5px; 
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; 
+    font-size: 1rem; 
+}
+
+input:focus {
+    border-color: #005f56; 
+    box-shadow: 0 0 5px rgba(0, 121, 107, 0.5); 
+    outline: none; 
+}
+
+button {
+    padding: 10px; 
+    background-color: #00796b;
+    color: white;
+    border: none;
+    border-radius: 5px; 
+    cursor: pointer; 
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;  
+    animation: bounceIn 0.5s ease forwards; 
+}
+
+button:hover {
+    background-color: #005f56;
+    transform: scale(1.05); 
+}
+
+button:active {
+    transform: translateY(0); 
+}
+
+/*signup-form section*/
+/*footer starts*/
+
+#footerLabel {
+    background-color: #00796b;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+#footerLabel p {
+    margin: 10px 0;
+    font-size: 1.1em;
+}
+
+#footerLabel a {
+    color: #ffeb3b;
+    text-decoration: none;
+}
+
+#footerLabel a:hover {
+    text-decoration: underline;
+}
+
+.social-icons {
+    margin-top: 10px;
+}
+
+.social-icons a {
+    color: #fff;
+    margin: 0 10px;
+    font-size: 1.5em;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #ffeb3b;
+}
+
+/*footer ends*/
+/*Donate page starts*/
+
+
+/* Donation Section Styles */
+.donation-section {
+    padding: 50px 20px; 
+    background-color: #e0f7fa; 
+    background-image: url('../images/donate.jpeg');
+    background-size: cover; 
+    background-position: center;
+    border-radius: 10px; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+    text-align: center; 
+    animation: fadeInUp 0.5s ease forwards; 
+    margin-bottom: 30px; 
+}
+
+/* Donation Description Styles */
+.donation-section .donation-description {
+    max-width: 800px; 
+    margin: 0 auto; 
+    font-size: 1.1rem; 
+    color: #333; 
+    background-color: rgba(255, 255, 255, 0.5); 
+    padding: 20px; 
+    border-radius: 8px; 
+    transition: transform 0.3s ease;
+    animation: fadeIn 1s ease forwards;
+}
+.donation-section .donation-description:hover {
+    transform: scale(1.02); 
+}
+
+/* Section Title Styles */
+.sectionTitle::after {
+    display: inline-block;
+    content: " ";
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    background-color: #00796b; 
+    left: 50%; 
+    transform: translateX(-50%) rotate(45deg); 
+    top: calc(100% - 9px);
+    border: 3px solid #ffffff; 
+}
+
+/*donation-details starts*/
+
+.donation-details ul {
+    padding: 0;
+}
+
+.donation-details li {
+    margin: 10px 0;
+    cursor: pointer;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.donation-details li:hover {
+    transform: scale(1.05); 
+    color: #00796b; 
+}
+
+.donation-details li i {
+    margin-right: 8px; 
+}
+/*donation-details styling*/
+.donation-details {
+    margin: 40px 0; 
+    padding: 20px; 
+    background-color: #f4f4f4;
+    border-radius: 10px; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+}
+
+.donation-details h3 {
+    font-size: 1.8rem;
+    color: #00796b; 
+    margin-bottom: 20px; 
+    text-align: center; 
+    animation: fadeIn 0.5s ease forwards; 
+}
+
+.donation-description {
+    text-align: left; 
+    font-size: 1.1rem; 
+    color: #333; 
+}
+#donation-list {
+    list-style-type: none; 
+    padding: 0; 
+}
+#donation-list li {
+    display: flex; 
+    align-items: center; 
+    padding: 10px; 
+    margin: 10px 0; 
+    border-radius: 5px; 
+    transition: background-color 0.3s ease, transform 0.3s ease; 
+    cursor: pointer; 
+}
+#donation-list li:hover {
+    background-color: #e0f7fa; 
+    transform: scale(1.02); 
+}
+#donation-list li i {
+    margin-right: 10px; 
+    font-size: 1.5rem; 
+    color: #00796b; 
+}
+.donation-impact {
+    margin-top: 20px; 
+    text-align: center; 
+    font-size: 1.1rem; 
+    color: #555; 
+}
+#impact-message {
+    font-weight: bold; 
+    color: #00796b; 
+    margin-top: 10px; 
+}
+/*donation-details ends*/
+/*donation-options starts*/
+.donation-options {
+    text-align: center; 
+    padding: 20px 10px; 
+    background-color: #f4f4f4; 
+    border-radius: 5px; 
+    
+    margin-bottom: 40px; 
+}
+
+.donation-methods {
+    display: flex;
+    justify-content: center; 
+    gap: 30px; 
+}
+
+.donation-method {
+    cursor: pointer; 
+    text-align: center; 
+    transition: transform 0.2s; 
+}
+
+.donation-method:hover {
+    transform: translateY(-5px); 
+}
+
+.icon-container {
+    width: 80px; 
+    height: 80px;
+    background-color: #00796b; 
+    border-radius: 50%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto; 
+    transition: background-color 0.3s, transform 0.2s; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+}
+
+.icon-container:hover {
+    background-color: #005f57; 
+    transform: scale(1.05); 
+}
+
+strong {
+    display: block; 
+    font-size: 1.2rem; 
+    margin: 10px 0; 
+    color: #00796b;
+}
+
+.hidden-text {
+    display: none; 
+    color: #555; 
+    font-size: 1rem; 
+    margin-top: 5px;
+    transition: opacity 0.3s; 
+}
+/*donation-options ends*/
+
+.donation-achievements {
+    padding: 40px 20px; 
+    background-color: #e0f7fa; 
+    text-align: center; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px; 
+}
+
+.donation-achievements .sectionTitle {
+    margin-bottom: 30px;
+}
+
+.achievement-container {
+    margin: 20px; 
+    display: inline-block; 
+    width: calc(33% - 40px); 
+    vertical-align: top;
+    text-align: center; 
+}
+
+.achievement-container img {
+    width: 100%; 
+    height: auto; 
+    border-radius: 10px; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    transition: transform 0.3s; 
+}
+
+.achievement-container img:hover {
+    transform: scale(1.05);
+}
+
+.achievement-container p {
+    margin-top: 10px; 
+    color: #333; 
+    font-size: 1.1rem; 
+}
+/* section ends */
+.sponsorship-section {
+    padding: 40px 20px; 
+    background-color: #f4f4f4; 
+    animation: fadeInUp 0.5s ease forwards; 
+    margin-bottom: 40px;
+    text-align: center; 
+}
+
+.corporate-sponsorships,
+.donation-form {
+    margin-bottom: 30px;
+}
+
+.sectionTitle {
+    margin-bottom: 20px;
+    font-size: 2rem;
+    font-weight: 500; 
+    text-transform: uppercase; 
+    animation: bounceIn 0.5s ease forwards; 
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); 
+}
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left; 
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px; 
+    border: 1px solid #ccc; 
+    transition: border-color 0.3s; 
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="number"]:focus,
+select:focus,
+textarea:focus {
+    border-color: #00796b; 
+    outline: none;
+}
+
+.submit-button button {
+    padding: 10px 20px; 
+    background-color: #00796b; 
+    color: white; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    transition: background-color 0.3s; 
+}
+
+.submit-button button:hover {
+    background-color: #005f57; 
+}
+/*Donate page ends*/
+/*Contact page starts */
+#contactIntro {
+    position: relative;
+    text-align: center; 
+    padding: 50px 20px; 
+    background-image: url('../images/contact.jpg'); 
+    background-size: cover; 
+    background-position: center;  
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); 
+    animation: fadeIn 0.5s ease forwards; 
+}
+
+#contactIntro::before {
+    content: ""; 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    bottom: 0; 
+    background-color: rgba(0, 0, 0, 0.4); 
+    border-radius: 8px; 
+    z-index: 1;
+}
+
+#contactIntro h1 {
+    margin-bottom: 20px; 
+    font-size: 2.5rem; 
+    color: #ffffff;
+    position: relative; 
+    z-index: 2; 
+}
+
+#contactIntro p {
+    font-size: 1.1rem; 
+    line-height: 1.6; 
+    color: #ffffff; 
+    position: relative; 
+    z-index: 2; 
+}
+
+#contactIntro a {
+    color: #00bcd4; 
+    text-decoration: underline; 
+    transition: color 0.3s ease; 
+}
+
+#contactIntro a:hover {
+    color: #005f57; 
+}
+
+.contactContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 40px; 
+    background-color: #f0f4f8;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 100vw;
+    margin-left: calc(-50vw + 50%); 
+    margin-right: calc(-50vw + 50%); 
+    box-sizing: border-box; 
+}
+
+#contactSection {
+    flex: 1;
+    margin-right: 20px; 
+}
+
+#contactForm {
+    flex: 1;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h2.sectionTitle, h3.sectionTitle {
+    color: #005f57;
+    transition: color 0.3s ease;
+}
+
+h2.sectionTitle:hover, h3.sectionTitle:hover {
+    color: #003c3a;
+}
+
+p {
+    margin: 10px 0;
+    line-height: 1.6;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+p a {
+    color: #005f57;
+    text-decoration: none;
+}
+
+p a:hover {
+    text-decoration: underline;
+    color: #003c3a;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"], input[type="email"], textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
+    border-color: #005f57;
+    outline: none;
+}
+
+button {
+    background-color: #005f57;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #003c3a;
+}
+
+.social-media-icons {
+    display: flex;
+    justify-content: center; 
+    margin-top: 10px;
+}
+
+.social-media-icons a {
+    margin-right: 10px;
+    font-size: 1.5rem;
+    color: #005f57;
+    transition: color 0.3s ease;
+}
+
+.social-media-icons a:hover {
+    margin: 0 10px; 
+    font-size: 1.5rem;
+    color: #005f57;
+    transition: color 0.3s ease;
+}
+section#contactSection p {
+    text-align: center; 
+    margin: 10px 0; 
+}
+
+/*Contact page ends  */
+

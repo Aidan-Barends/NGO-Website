@@ -1,0 +1,36 @@
+ /* Container to hold the marquee */
+        .marquee-container {
+            width: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Marquee animation for the slides */
+        .marquee {
+            display: inline-block;
+            white-space: nowrap;
+            animation: marquee 80s linear infinite;
+            /* Setting the initial position */
+            transform: translateX(0);
+        }
+
+        /* Individual slides/images */
+        .marquee img {
+            height: 200px;
+            width: auto;
+            display: inline-block;
+            margin: 0 10px;
+        }
+
+        /* Animation keyframes for continuous scrolling */
+        @keyframes marquee {
+            0% {
+                transform: translateX(0); /* Starts at the full container */
+            }
+            100% {
+                transform: translateX(-50%); /* Scrolls half the width of the marquee */
+            }
+        }

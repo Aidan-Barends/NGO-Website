@@ -1,0 +1,13 @@
+ .error-message {
+            color: red;
+            display: none;
+        }
+        .message-display {
+            margin-top: 20px;
+        }
+        .message-item {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+		
